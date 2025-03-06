@@ -1,30 +1,35 @@
-"use client";
-
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {IoBrowsersOutline, IoCalculator, IoLogoReact} from "react-icons/io5";
 import {SidebarMEnuItem} from "./SidebarMEnuItem";
+import {CgPokemon} from "react-icons/cg";
 
 const items = [
   {
     path: "/dashboard/main",
-    icon: <IoBrowsersOutline className="h-6 w-6" />,
-    title: "Home",
-    subtitle: "Sección principal",
+    icon: <IoBrowsersOutline size={40} />,
+    title: "Dashboard",
+    subtitle: "Sección Principal",
   },
   {
     path: "/dashboard/counter",
-    icon: <IoCalculator className="h-6 w-6" />,
+    icon: <IoCalculator size={40} />,
     title: "Counter",
-    subtitle: "Estado local",
+    subtitle: "Estado Local",
+  },
+  {
+    path: "/dashboard/pokemons",
+    icon: <CgPokemon size={40} />,
+    title: "Pokemons",
+    subtitle: "Generación Estática",
   },
 ];
 export const Sidebar = () => {
   return (
     <div
       id="menu"
-      className="bg-gray-900 min-h-screen z-10 text-slate-300 w-64 h-screen overflow-y-scroll"
+      className="bg-gray-900 min-h-screen z-10 text-slate-300 w-64  overflow-y-scroll"
     >
       <div id="logo" className="my-4 px-6">
         <h1 className="text-lg flex items-center md:text-2xl font-bold text-white">
