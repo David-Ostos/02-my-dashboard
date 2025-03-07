@@ -69,7 +69,7 @@ export const Cards = ({name, id}: Props) => {
               </div>
 
               <Link
-                href={`pokemon/${id}`}
+                href={`pokemons/${name}`}
                 className="border rounded-full py-2 px-4 text-xs font-semibold mx-auto self-center"
               >
                 Más información

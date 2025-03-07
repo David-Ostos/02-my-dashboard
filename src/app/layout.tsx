@@ -15,6 +15,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Pokémons",
   description: "FH Pokémons dashboard",
+  metadataBase: new URL('https://02-my-dashboard-pi.vercel.app/')
 };
 
 export default function RootLayout({

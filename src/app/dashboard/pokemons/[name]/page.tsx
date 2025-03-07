@@ -5,7 +5,7 @@ import {notFound} from "next/navigation";
 
 interface Props {
   params: Promise<{
-    id: string;
+    name: string;
   }>;
 }
 //! build time
@@ -13,24 +13,25 @@ export async function generateStaticParams(){
   
   const static151Pokemons = Array.from({length: 151}, (_, i) => `${i + 1}`);
 
-  return static151Pokemons.map((id) => ({
-    id: id,
+  return static151Pokemons.map((name) => ({
+    name: name,
   })) ;
 }
 
 
 export async function generateMetadata({params}: Props): Promise<Metadata> {
-  const {id} = await params;
-  const {name} = await getPokemon(id);
+  const {name} = await params;
+  const {id} = await getPokemon(name);
   return {
     title: `#${id} - ${name}`,
     description: `Página del pokémon ${name}`,
+    metadataBase: new URL('https://02-my-dashboard-pi.vercel.app/'),
   };
 }
 
-const getPokemon = async (id: string): Promise<Pokemon> => {
+const getPokemon = async (name: string): Promise<Pokemon> => {
   try {
-    const pokemon = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`, {
+    const pokemon = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`, {
       //cache: "force-cache", //TODO: cambiar esto en un futuro
       next: {
         revalidate: 60 * 60 * 24,
@@ -47,8 +48,8 @@ const getPokemon = async (id: string): Promise<Pokemon> => {
 };
 
 export default async function PokemonPage({params}: Props) {
-  const {id} = await params;
-  const pokemon = await getPokemon(id);
+  const {name} = await params;
+  const pokemon = await getPokemon(name);
 
   return (
     <div className="flex mt-5 flex-col items-center text-slate-800">
