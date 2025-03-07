@@ -1,6 +1,12 @@
 import {PokemonsResponse, SimplePokemon} from "@/pokemons";
 import {PokemonGrid} from "@/pokemons/components/PokemonGrid";
+import { Metadata } from "next";
 // import {notFound} from "next/navigation";
+
+export const metadata:Metadata = {
+  title: "Lista de los Pokémons",
+  description: "Listado de los primeros 151 Pokémons",
+}
 
 const getpoKemons = async (
   limit = 20,
