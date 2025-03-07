@@ -46,12 +46,12 @@ export const Cards = ({name, id}: Props) => {
               <div className="">
                 <Link
                   href="/dashboard/main"
-                  className="px-4 py-2 hover:bg-gray-100 flex justify-center items-center"
+                  className="px-4 py-2 hover:bg-gray-100 flex "
                 >
-                  <div className="text-rose-600">
+                  <div className="text-rose-600 self-center">
                     <IoHeartOutline size={30} />
                   </div>
-                  <div className="pl-3">
+                  <div className="pl-3 justify-self-start self-start">
                     <p className="text-sm font-medium text-gray-800 leading-none">
                       Favoritos
                     </p>
@@ -69,7 +69,7 @@ export const Cards = ({name, id}: Props) => {
               </div>
 
               <Link
-                href={`/pokemon/${id}`}
+                href={`pokemon/${id}`}
                 className="border rounded-full py-2 px-4 text-xs font-semibold mx-auto self-center"
               >
                 Más información

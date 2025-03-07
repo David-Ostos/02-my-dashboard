@@ -1,5 +1,6 @@
-import {PokemonsResponse, SimplePokemon} from "@/app/pokemons";
-import {PokemonGrid} from "@/app/pokemons/components/PokemonGrid";
+import {PokemonsResponse, SimplePokemon} from "@/pokemons";
+import {PokemonGrid} from "@/pokemons/components/PokemonGrid";
+// import {notFound} from "next/navigation";
 
 const getpoKemons = async (
   limit = 20,
@@ -13,6 +14,9 @@ const getpoKemons = async (
     id: pokemon.url.split("/").at(-2)!,
     name: pokemon.name,
   }));
+
+  // throw new Error("Este es un error");
+  // throw notFound();
 
   return pokemons;
 };
