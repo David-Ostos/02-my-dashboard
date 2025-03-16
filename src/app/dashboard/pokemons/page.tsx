@@ -33,7 +33,7 @@ export default async function PokemonsPage() {
   return (
     <div className=" h-screen overflow-y-auto pt-8 px-8">
       <span className=" text-5xl mt-4">
-        Listado de Pokémons <small>estático</small>
+        Listado de Pokémons <small className="text-blue-500" >estático</small>
       </span>
       <div>
         <PokemonGrid pokemons={pokemons} />

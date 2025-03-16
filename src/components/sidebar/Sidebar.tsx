@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import {IoBrowsersOutline, IoCalculator, IoLogoReact} from "react-icons/io5";
+import {IoBrowsersOutline, IoCalculator, IoHeartOutline, IoLogoReact} from "react-icons/io5";
 import {SidebarMEnuItem} from "./SidebarMEnuItem";
 import {CgPokemon} from "react-icons/cg";
 
@@ -23,6 +23,11 @@ const items = [
     icon: <CgPokemon size={40} />,
     title: "Pokemons",
     subtitle: "Generación Estática",
+  },{
+    path: "/dashboard/favorites",
+    icon: <IoHeartOutline size={40} className="text-red-400" />,
+    title: "Favoritos",
+    subtitle: "Global state",
   },
 ];
 export const Sidebar = () => {

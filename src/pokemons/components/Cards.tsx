@@ -44,8 +44,7 @@ export const Cards = ({name, id}: Props) => {
           <div className="bg-white/90 backdrop-blur rounded-lg p-3 space-y-3">
             <div className="w-full flex flex-col p-3 space-y-3">
               <div className="">
-                <Link
-                  href="/dashboard/main"
+                <div
                   className="px-4 py-2 hover:bg-gray-100 flex "
                 >
                   <div className="text-rose-600 self-center">
@@ -65,7 +64,7 @@ export const Cards = ({name, id}: Props) => {
                       </p>
                     )}
                   </div>
-                </Link>
+                </div>
               </div>
 
               <Link
